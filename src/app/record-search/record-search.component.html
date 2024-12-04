@@ -1,0 +1,33 @@
+
+
+<div class="search-container">
+  <!-- Search Filters -->
+  <div class="filters">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate" class="input-field">
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate" class="input-field">
+
+    <label for="sortField">Sort By:</label>
+    <select id="sortField" name="sortField" class="select-field">
+      <option value="date">Date</option>
+      <option value="parameter">Parameter</option>
+    </select>
+
+    <label for="sortOrder">Sort Order:</label>
+    <select id="sortOrder" name="sortOrder" class="select-field">
+      <option value="desc">Descending</option>
+      <option value="asc">Ascending</option>
+    </select>
+  </div>
+
+  <button (click)="searchRecords()" class="search-button">Search</button>
+
+  <!-- Display Records -->
+  <ul class="records-list">
+    <li *ngFor="let record of records" class="record-item">
+      {{ record.date }} - {{ record.parameter }}
+    </li>
+  </ul>
+</div>
